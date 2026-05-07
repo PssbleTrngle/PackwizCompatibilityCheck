@@ -1,5 +1,7 @@
 plugins {
-    idea
-    id("com.possible-triangle.gradle") version ("0.2.5")
+    id("com.possible-triangle.core")
+    id("com.possible-triangle.vanilla") apply false
+    id("com.possible-triangle.forge") apply false
 }
 
+enableSpotless()

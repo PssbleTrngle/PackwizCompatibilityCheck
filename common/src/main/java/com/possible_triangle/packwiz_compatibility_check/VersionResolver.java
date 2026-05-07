@@ -3,11 +3,10 @@ package com.possible_triangle.packwiz_compatibility_check;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import net.minecraft.network.protocol.status.ServerStatus;
-
 import java.io.File;
 import java.io.FileReader;
 import java.util.Optional;
+import net.minecraft.network.protocol.status.ServerStatus;
 
 public class VersionResolver {
 
