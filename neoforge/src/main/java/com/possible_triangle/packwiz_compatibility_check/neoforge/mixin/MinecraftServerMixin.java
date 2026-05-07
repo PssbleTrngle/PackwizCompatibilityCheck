@@ -1,8 +1,7 @@
-package com.possible_triangle.packwiz_compatibility_check.forge.mixin;
+package com.possible_triangle.packwiz_compatibility_check.neoforge.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.possible_triangle.packwiz_compatibility_check.VersionResolver;
-import java.util.Optional;
 import net.minecraft.network.protocol.status.ServerStatus;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +21,7 @@ public abstract class MinecraftServerMixin {
                 VersionResolver.get(),
                 original.favicon(),
                 original.enforcesSecureChat(),
-                Optional.empty()
+                true
         );
     }
 

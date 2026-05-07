@@ -1,10 +1,8 @@
 plugins {
-    id("com.possible-triangle.forge")
+    id("com.possible-triangle.neoforge")
 }
 
-forge {
-    enableMixins()
-
+neoforge {
     dependOn(project(":common"))
 }
 

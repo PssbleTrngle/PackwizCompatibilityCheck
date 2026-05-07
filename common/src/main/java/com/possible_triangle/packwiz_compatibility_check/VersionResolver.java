@@ -26,6 +26,7 @@ public class VersionResolver {
         try(var reader = new FileReader(PACKWIZ_FILE)) {
             var json = GSON.fromJson(reader, JsonObject.class);
             var packFileHash = json.getAsJsonObject("packFileHash").get("value").getAsString();
+            cachedVersion = packFileHash;
             return Optional.of(packFileHash);
         } catch(Exception ex) {
             Constants.LOGGER.error("An error occured parsing packwiz.json file:");
