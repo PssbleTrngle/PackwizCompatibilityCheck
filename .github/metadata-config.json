@@ -1,12 +1,7 @@
 {
-   "$version": "1.0",
-   "$schema": "https://workflows.somethingcatchy.net/schema/config.json",
-   "type": "minecraft",
-   "loaders": [
-      "forge",
-      "neoforge"
-   ],
-   "upload": {
-      "modrinth": true
-   }
+  "$version": "1.0",
+  "$schema": "https://workflows.somethingcatchy.net/schema/config.json",
+  "type": "minecraft",
+  "loaders": ["forge", "neoforge"],
+  "upload": { "modrinth": true }
 }
