@@ -1,0 +1,42 @@
+# <meta>
+#    <source>@pssbletrngle/github-meta-generator</source>
+#    <version>1.0.56</version>
+#    <timestamp>2026-05-07T18:24:10.131Z</timestamp>
+#    <hash>92b897182b77c632</hash>
+# </meta>
+
+name: Release
+on:
+  release:
+    types: [published]
+
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.event_name != 'push' }}
+
+      - name: Build and upload
+        run: ./gradlew build publish
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          CHANGELOG: ${{ github.event.release.body }}
+          RELEASE_VERSION: ${{ github.event.release.tag_name }}

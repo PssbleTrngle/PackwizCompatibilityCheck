@@ -1,0 +1,44 @@
+# <meta>
+#    <source>@pssbletrngle/github-meta-generator</source>
+#    <version>1.0.56</version>
+#    <timestamp>2026-05-07T18:24:10.131Z</timestamp>
+#    <hash>f7e481f46c45cda1</hash>
+# </meta>
+
+name: Bug Report
+description: File a bug report
+labels: ["bug"]
+
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Loader
+      multiple: false
+      options:
+        - "forge"
+        - "neoforge"
+    validations:
+      required: true
+
+  - type: input
+    id: version-version
+    attributes:
+      label: Mod Version
+    validations:
+      required: true
+
+  - type: input
+    id: logs
+    attributes:
+      label: log output
+      description: Please copy and paste your log output to https://mclo.gs/ or a similar site and paste the link here.
