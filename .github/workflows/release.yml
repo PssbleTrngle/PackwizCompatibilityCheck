@@ -1,8 +1,8 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.56</version>
-#    <timestamp>2026-05-07T18:34:57.162Z</timestamp>
-#    <hash>92b897182b77c632</hash>
+#    <version>1.0.57</version>
+#    <timestamp>2026-05-12T05:58:51.443Z</timestamp>
+#    <hash>dbb00d8a44e9f658</hash>
 # </meta>
 
 name: Release
@@ -35,7 +35,7 @@ jobs:
           cache-read-only: ${{ github.event_name != 'push' }}
 
       - name: Build and upload
-        run: ./gradlew build publish
+        run: ./gradlew build upload
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
           CHANGELOG: ${{ github.event.release.body }}
