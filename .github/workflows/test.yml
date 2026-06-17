@@ -1,8 +1,8 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.84</version>
-#    <timestamp>2026-06-08T09:57:22.519Z</timestamp>
-#    <hash>c3d35fac0b009618</hash>
+#    <version>1.0.93</version>
+#    <timestamp>2026-06-17T16:45:00.375Z</timestamp>
+#    <hash>7d77ec308dbcc739</hash>
 # </meta>
 
 name: Test
@@ -33,11 +33,11 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           java-version: 26
           distribution: temurin
